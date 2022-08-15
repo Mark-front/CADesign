@@ -31,3 +31,8 @@ document.querySelector('.contacts__join-team').addEventListener('click', () => {
   document.querySelector('.modal-response').style.display = 'block';
   tlModal.play();
 });
+
+document.querySelector('.hero__btn').addEventListener('click', () => {
+  document.querySelector('.modal-response').style.display = 'block';
+  tlModal.play();
+});
