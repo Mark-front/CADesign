@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADesign</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript" defer></script>
+  <script src="gsap/gsap.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="header__logo logo" aria-label="Главная страница">
+        <img class="logo__img" src="./img/sprite.svg#logo" alt="Главная страница">
+      </a>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about-us" class="nav__link">
+              О нас
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#our-values" class="nav__link">
+              Наши ценности </a>
+          </li>
+          <li class="nav__item">
+            <a href="#vacancies" class="nav__link">
+              Вакансии
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#for-students" class="nav__link">
+              Начало карьеры </a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">
+              Контакты
+            </a>
+          </li>
+          <li class="nav__item socials socials--modal">
+            <button class="socials__btn-open link">
+              Социальные сети
+            </button>
+            <ul class="socials__list socials__list--header">
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon vk" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#vk" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon ok" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#ok" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon fb" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#fb" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon inst" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#inst" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="burger-open ">
+        <svg viewbox="0 0 32 32">
+          <use xlink:href="./img/sprite.svg#burger"></use>
+        </svg>
+      </button>
+    </div>
+    <span class="header__line"></span>
+    <div class="burger">
+      <nav class="header__nav nav nav--burger">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about-us" class="nav__link">
+              О нас
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#our-values" class="nav__link">
+              Наши ценности </a>
+          </li>
+          <li class="nav__item">
+            <a href="#vacancies" class="nav__link">
+              Вакансии
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#for-students" class="nav__link">
+              Начало карьеры </a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">
+              Контакты
+            </a>
+          </li>
+          <li class="nav__item socials">
+            <ul class="socials__list socials__list--contacts">
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon social__icon--white vk" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#vk" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon social__icon--white ok" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#ok" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon social__icon--white fb" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#fb" />
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link social">
+                  <svg class="social__icon social__icon--white inst" viewbox="0 0 32 32">
+                    <use xlink:href="./img/sprite.svg#inst" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="burger__close button">
+        <svg class="close-icon" viewbox="0 0 32 32">
+          <use xlink:href="./img/sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title title">
+            Энергия твоего роста! – заряжаем твою карьеру
+          </h1>
+          <a href="#" class="hero__btn button">
+            Cтать частью команды
+          </a>
+        </div>
+        <span class="hero__img womans-img">
+          <img src="./img/womans.webp" alt="Команда">
+        </span>
+      </div>
+      <span class="hero__bacg-block"></span>
+    </section>
+    <section id="about-us" class="about-us container">
+      <ul class="about-us__list ">
+        <li class="about-us__item company-card">
+          <span class="company-card__icon">
+            <svg class="stairs" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#stairs" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Развитие
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+        <li class="company-cards__item company-card">
+          <span class="company-card__icon">
+            <svg class="training" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#training" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Обучение
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+        <li class="company-cards__item company-card">
+          <span class="company-card__icon">
+            <svg class="responsibility" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#responsibility" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Ответственность
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+        <li class="company-cards__item company-card">
+          <span class="company-card__icon">
+            <svg class="dynamics" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#dynamics" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Динамика
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+        <li class="company-cards__item company-card">
+          <span class="company-card__icon">
+            <svg class="comfort" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#comfort" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Комфорт
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+        <li class="company-cards__item company-card">
+          <span class="company-card__icon">
+            <svg class="reliability" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#reliability" />
+            </svg>
+          </span>
+          <h2 class="company-card__title">
+            Надежность
+          </h2>
+          <p class="company-card__text">
+            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+          </p>
+        </li>
+      </ul>
+      <div class="about-us__swiper swiper swiper--about-us">
+        <div class="swiper-wrapper about-us__content">
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="stairs" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#stairs" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Развитие
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="training" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#training" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Обучение
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="responsibility" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#responsibility" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Ответственность
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="dynamics" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#dynamics" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Динамика
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="comfort" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#comfort" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Комфорт
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+          <div class="swiper-slide company-card">
+            <span class="company-card__icon">
+              <svg class="reliability" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#reliability" />
+              </svg>
+            </span>
+            <h2 class="company-card__title">
+              Надежность
+            </h2>
+            <p class="company-card__text">
+              Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+            </p>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination--about-us"></div>
+      </div>
+    </section>
+    <section id="our-team" class="our-team">
+      <div class="swiper swiper--our-team our-team__swiper big-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide our-team__slide">
+            <img class="employee-img" src="./img/TatianaDemyanova.webp">
+            <div class="employee-card container">
+              <h2 class="employee-card__name">
+                Евдокимова Майя
+              </h2>
+              <div class="employee-card__position">
+                Генеральный директор
+              </div>
+              <p class="employee-card__text">
+                Цель нашей работы обеспечить высочайший сервис нашим клиентам. Дать возможность бизнесу сосредоточиться
+                на своих ключевых задачах, передав функции управления персоналом, казначейства, финансового учёта и
+                отчётности нам.
+              </p>
+            </div>
+
+          </div>
+          <div class="swiper-slide our-team__slide">
+            <img class="employee-img" src="./img/EvdokimovaMaya.webp">
+            <div class="employee-card container">
+
+              <h2 class="employee-card__name">
+                Евдокимова Майя
+              </h2>
+              <div class="employee-card__position">
+                Генеральный директор
+              </div>
+              <p class="employee-card__text">
+                Цель нашей работы обеспечить высочайший сервис нашим клиентам. Дать возможность бизнесу сосредоточиться
+                на своих ключевых задачах, передав функции управления персоналом, казначейства, финансового учёта и
+                отчётности нам.
+              </p>
+            </div>
+
+          </div>
+          <div class="swiper-slide our-team__slide">
+            <img class="employee-img" src="./img/TatianaDemyanova.webp">
+            <div class="employee-card container">
+
+              <h2 class="employee-card__name">
+                Татьяна Демьянова
+              </h2>
+              <div class="employee-card__position">
+                Специалист, отдел МСФО, 32 года
+              </div>
+              <p class="employee-card__text">
+                «Компания сегодня — это одна из немногих компаний, где действительно делают крутые вещи. »
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev">
+          <svg class="arrow-right arrow-right--reverse" viewbox="0 0 32 32">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg class="arrow-right" viewbox="0 0 32 32">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="services container">
+      <h2 class="services__title section-title">
+        Общий центр обслуживания в г. Иваново оказывает услуги энергетическому
+        холдингу Группе компаний в области:
+      </h2>
+      <ul class="services__list service-list">
+        <li class="service-list__item service-card">
+          <div class="service-card__content-top">
+            <div class="service-card__icon">
+              <svg class="calc" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#calc" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              Учета и отчетности
+            </h3>
+          </div>
+          <button class="service-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="service-list__item service-card">
+          <div class="service-card__content-top">
+            <div class="service-card__icon">
+              <svg class="people" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#people" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              Управления персоналом
+            </h3>
+          </div>
+          <button class="service-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="service-list__item service-card">
+          <div class="service-card__content-top">
+            <div class="service-card__icon">
+              <svg class="safe-box" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#safe-box" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              Казначейства
+            </h3>
+          </div>
+          <button class="service-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </section>
+    <section class="video">
+      <video class="company-video" src="video-meeting.mp4" loop="true">
+      </video>
+      <button class="video__play play-btn">
+        <svg class="play" viewbox="0 0 32 32">
+          <use xlink:href="./img/sprite.svg#play" />
+        </svg>
+      </button>
+    </section>
+    <section id="our-values" class="our-values">
+      <div class="container">
+        <h2 class="our-values__title section-title">
+          Наши ценности
+        </h2>
+        <ul class="our-values__list values">
+          <li class="values__item values-card">
+            <h3 class="values-card__title">
+              Человеческий капитал
+            </h3>
+            <p class="values-card__text">
+              Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет
+              сделать
+              текст более привлекательным и живым для визуально-слухового восприятия.
+            </p>
+          </li>
+          <li class="values__item values-card">
+            <h3 class="values-card__title">
+              Предоставление услуг высочайшего качества
+            </h3>
+            <p class="values-card__text">
+              Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут
+              они
+              в буквенных домах на берегу Семантика большого языкового океана. </p>
+          </li>
+          <li class="values__item values-card">
+            <h3 class="values-card__title">
+              Стремление к совершенству
+            </h3>
+            <p class="values-card__text">
+              Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет
+              сделать
+              текст более привлекательным и живым для визуально-слухового восприятия. </p>
+          </li>
+        </ul>
+        <div class="swiper swiper--our-values our-values__swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide values-card">
+              <h3 class="values-card__title">
+                Человеческий капитал
+              </h3>
+              <p class="values-card__text">
+                Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет
+                сделать
+                текст более привлекательным и живым для визуально-слухового восприятия.
+              </p>
+            </div>
+            <div class="swiper-slide values-card">
+              <h3 class="values-card__title">
+                Предоставление услуг высочайшего качества
+              </h3>
+              <p class="values-card__text">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут
+                они
+                в буквенных домах на берегу Семантика большого языкового океана. </p>
+            </div>
+            <div class="swiper-slide values-card">
+              <h3 class="values-card__title">
+                Стремление к совершенству
+              </h3>
+              <p class="values-card__text">
+                Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет
+                сделать
+                текст более привлекательным и живым для визуально-слухового восприятия. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="vacancies" class="vacancies big-container">
+      <h2 class="vacancies__title section-title">
+        Вакансии
+      </h2>
+      <div class="vacancies__filter filter-checkbox">
+        <!-- filter -->
+        <span class="filter-checkbox__text filter-checkbox__text--disabled js-ivanovo-choice">
+          Общий центр обслуживания (Иваново)
+        </span>
+        <label id="form-response__" class="filter-checkbox__label">
+          <input class="visually-hidden default-checkbox" type="checkbox">
+          <span class="filter-checkbox__toggle"></span>
+        </label>
+        <span class="filter-checkbox__text filter-checkbox__text--disabled js-all-choice">
+          Все вакансии
+        </span>
+      </div>
+      <ul class="vacancies__list vacancies__list--overlfow-hidden vacancies-list">
+        <li class="vacancies-list__item vacancy-card js-ivanovo">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="board" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#board" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 180.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="people" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#people" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">ЗП по результатам собеседоваия</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-another">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-ivanovo">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="board" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#board" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 180.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-ivanovo">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="people" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#people" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">ЗП по результатам собеседоваия</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="vacancies-list__item vacancy-card js-ivanovo">
+          <h3 class="vacancy-card__title">
+            Бухгалтер по расчету
+            заработной платы
+          </h3>
+          <div class="vacancy-card__icon">
+            <svg class="calc" viewbox="0 0 32 32">
+              <use xlink:href="./img/sprite.svg#calc" />
+            </svg>
+          </div>
+          <div class="vacancy-card__salary">68.000 — 80.000 руб.</div>
+          <button class="vacancy-card__btn button-more">
+            Подробнее
+            <span class="button-more__icon">
+              <svg class="arrow-right" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#arrow-right" />
+              </svg>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <button class="vacancies__more-btn button">Больше вакансии</button>
+    </section>
+    <section id="for-students" class="for-students big-container">
+      <span class="for-students__bacg for-students__bacg--left"></span>
+      <span class="for-students__bacg for-students__bacg--rigth"></span>
+      <div class="for-students__container container">
+        <h2 class="for-students__title section-title">
+          Студентам и молодым специалистам
+        </h2>
+        <p class="for-students__text">
+          Учишься или недавно закончил направления
+        </p>
+        <ul class="for-students__list skills">
+          <li class="skills__item skill">
+            <span class="skill__icon">
+              <svg class="calc-min" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#calc-min" />
+              </svg>
+            </span>
+            <p class="skill__name">
+              Бухгалтерский учёт
+            </p>
+          </li>
+          <li class="skills__item skill">
+            <span class="skill__icon">
+              <svg class="coin" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#coin" />
+              </svg>
+            </span>
+            <p class="skill__name">
+              Финансовый менеджмент
+            </p>
+          </li>
+          <li class="skills__item skill">
+            <span class="skill__icon">
+              <svg class="people-min" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#people-min" />
+              </svg>
+            </span>
+            <p class="skill__name">
+              Управление персоналом
+            </p>
+          </li>
+          <li class="skills__item skill">
+            <span class="skill__icon">
+              <svg class="brain" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#brain" />
+              </svg>
+            </span>
+            <p class="skill__name">
+              Социальная психология
+            </p>
+          </li>
+        </ul>
+        <div class="for-students__feedback">
+          <a href="#" class="link">
+            Заполни анкету
+          </a>
+          и отправь нам!
+        </div>
+      </div>
+    </section>
+    <section id="success-stories" class="success-stories">
+      <h2 class="success-stories__title section-title">
+        Истории успеха
+      </h2>
+      <div class="swiper success-stories__swiper swiper--success-stories big-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide--success-stories ">
+            <img class="employee-img" src="./img/TatianaDemyanova.webp">
+            <div class="employee-card container">
+              <h2 class="employee-card__name">
+                Татьяна Демьянова
+              </h2>
+              <div class="employee-card__position">
+                Специалист, отдел МСФО, 32 года
+              </div>
+              <p class="employee-card__text employee-card__text--indent">
+                «Компания сегодня — это одна из немногих компаний, где действительно делают крутые вещи. »
+              </p>
+              <a href="#" class="employee-card__link link">Читать историю</a>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--success-stories">
+            <img class="employee-img" src="./img/EvdokimovaMaya.webp">
+            <div class="employee-card container">
+              <h2 class="employee-card__name">
+                Татьяна Демьянова
+              </h2>
+              <div class="employee-card__position"></div>
+              <p class="employee-card__text employee-card__text--indent">
+                Цель нашей работы обеспечить высочайший сервис нашим клиентам. Дать возможность бизнесу
+                сосредоточиться
+                на своих ключевых задачах, передав функции управления персоналом, казначейства, финансового учёта и
+                отчётности нам.
+              </p>
+              <a href="#" class="employee-card__link link">Читать историю</a>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination swiper-pagination--success-stories"></div>
+
+        <div class="swiper-button-prev swiper-button--success-stories">
+          <svg class="arrow-right arrow-right--reverse" viewbox="0 0 32 32">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next swiper-button--success-stories">
+          <svg class="arrow-right" viewbox="0 0 32 32">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="contacts">
+      <div id="map" class="contacts__map">
+        <div class="contacts__content ">
+          <h3 class="contacts__title">
+            Отдел подбора персонала:
+          </h3>
+          <a href="+7 800 700 8000" class="contacts__tel" type="tel">8 800 700 8000</a>
+          <a href=" oco_rabota@mail.ru" class="contacts__email link" type="email"> oco_rabota@mail.ru</a>
+          <button class="contacts__join-team button">
+            Cтать частью команды
+          </button>
+          <ul class="socials socials__list socials__list--contacts">
+            <li class="socials__item">
+              <a href="#" class="socials__link social social--light-border">
+                <svg class="social__icon social__icon--orange vk" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#vk" />
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link social social--light-border">
+                <svg class="social__icon social__icon--orange ok" viewbox=" 0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#ok" />
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link social social--light-border">
+                <svg class="social__icon social__icon--orange fb" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#fb" />
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link social social--light-border">
+                <svg class="social__icon social__icon--orange inst" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#inst" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer ">
+    <div id="footerTrigger"></div>
+    <div id="footer__anim-container">
+      <div class="footer__container container">
+        <p class="company-name">© 1998–2019,«Компания», 53002, Иваново, Лежневская 34 корпус 1</p>
+        <a href="#" class="private-policy link">
+          Политика обработки персональных данных
+        </a>
+        <a href="#" class="footer__logo logo" aria-label="Главная страница">
+          <img class="logo__img" src="./img/sprite.svg#logo" alt="Главная страница">
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div class="modal">
+    <div class="modal__container">
+      <button class="modal__close button">
+        <svg class="close-icon" viewbox="0 0 32 32">
+          <use xlink:href="./img/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <div  class="modal__content modal-vacancy">
+        <h2 class="modal-vacancy__main-title modal__main-title">
+          Бухгалтер по расчету заработной платы
+        </h2>
+        <p class="modal-vacancy__salary">
+          от 30 000 до 60 000 руб. до вычета налогов
+        </p>
+        <button class="modal-vacancy__btn button">
+          Откликнуться
+        </button>
+        <section class="responsibility">
+          <h3 class="modal-vacancy__title">
+            Обязанности
+          </h3>
+          <ul class="modal__list modal-vacancy__list">
+            <li class="modal__item">
+              Ведение бухгалтерского учета ООО и ИП "под ключ"(от обработки первичной документации
+              до сдачи всей отчетности)
+            </li>
+            <li class="modal__item">
+              Составление отчетности как регламентированной так и управленческой</li>
+            <li class="modal__item">
+              Постановку учета с нуля,восстановление учета.
+            </li>
+            <li class="modal__item">
+              Консультирование в выборе формы налогообложения,оптимизация налогообложения.
+            </li>
+            <li class="modal__item">
+              Подготовку и сдачу отчетности в ИФНС и фонды.
+            </li>
+            <li class="modal__item">
+              Ввод первичной документации в 1с:реализация,поступление,банк,касса.
+            </li>
+            <li class="modal__item">
+              Работу с клиент-банк(проведение платежей)
+            </li>
+          </ul>
+        </section>
+        <section class="requirements">
+          <h3 class="modal-vacancy__title">
+            Требования
+          </h3>
+          <ul class="modal__list modal-vacancy__list">
+            <li class="modal__item">
+              Опыт работы бухгалтером
+            </li>
+            <li class="modal__item">
+              Уверенный пользователь ПК
+            </li>
+            <li class="modal__item">
+              Личные качества(аккуратность,внимательность,нацеленность на результа
+            </li>
+          </ul>
+        </section>
+        <section class="conditions">
+          <h3 class="modal-vacancy__title">
+            Условия
+          </h3>
+          <ul class="modal__list modal-vacancy__list">
+            <li class="modal__item">
+              З/плата от 30 000
+            </li>
+            <li class="modal__item">
+              от 30 000 до 60 000 руб. до вычета налогов
+            </li>
+          </ul>
+        </section>
+        <div class="time-add">
+          Вакансия добавлена 16 февраля 2020
+        </div>
+        <button class="modal-vacancy__btn button">
+          Откликнуться
+        </button>
+      </div>
+      <div  class="modal__content  modal-response modal-response__container">
+        <h2 class="modal-response__main-title modal__main-title">
+          Отклик на вакансию
+        </h2>
+        <form id="form-response" action="#" class="modal__form form-response">
+          <label class="label form-response__label">
+            <input id="form-response__vacancy" class="input" type="text" name="vacancy">
+            <button class="clear-input">
+              <svg class="check-mark clear-input__icon--done" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#close"></use>
+              </svg>
+              <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#check-mark"></use>
+              </svg>
+            </button>
+            <div class="placeholder">
+              Желаемая вакансия *
+            </div>
+          </label>
+          <label class="label form-response__label">
+            <input id="form-response__full-name" class="input" type="text" name="full-name">
+            <button class="clear-input">
+              <svg class="check-mark clear-input__icon--done" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#close"></use>
+              </svg>
+              <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#check-mark"></use>
+              </svg>
+            </button>
+            <div class="placeholder">
+              Фамилия, имя и отчество *
+            </div>
+          </label>
+          <div class="form-response__halfs-box">
+            <label class="label form-response__label--tel">
+              <button class="clear-input">
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+              </button>
+              <input id="form-response__tel" class="input" type="tel" value="+7 (" name="tel">
+              <div class="placeholder">
+                Мобильный телефон*
+              </div>
+            </label>
+            <label class="label form-response__label">
+              <button class="clear-input">
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+              </button>
+              <input id="form-response__email" class="input" type="email" name="email">
+              <div class="placeholder">
+                E-mail
+              </div>
+            </label>
+          </div>
+          <label class="label form-response__label">
+            <input id="form-response__education" class="input" type="text" name="education">
+            <button class="clear-input">
+              <svg class="check-mark clear-input__icon--done" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#close"></use>
+              </svg>
+              <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#check-mark"></use>
+              </svg>
+            </button>
+            <div class="placeholder">
+              Образование *
+            </div>
+          </label>
+          <label class="label form-response__label">
+            <input id="form-response__address" class="input" type="text" name="address">
+            <button class="clear-input">
+              <svg class="check-mark clear-input__icon--done" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#close"></use>
+              </svg>
+              <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                <use xlink:href="./img/sprite.svg#check-mark"></use>
+              </svg>
+            </button>
+            <div class="placeholder">
+              Адрес места жительства *
+            </div>
+          </label>
+          <div class="form-response__birth-and-file">
+            <label class="label form-response__label--birth-date">
+              <button class="clear-input">
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+                <svg class="check-mark clear-input__icon--clear" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+              </button>
+              <input id="form-response__birth-date" class="input" type="date" name="birth-date"
+                placeholder="Дата рождения">
+            </label>
+            <label class="form-response__label-file file ">
+              <input id="form-response__resume" class="input-file" type="file" name="resume">
+              <span class="link file__name">Загрузить резюме</span>
+              <button class="file__del" type="button">
+                <svg class="trash" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#trash"></use>
+                </svg>
+              </button>
+            </label>
+          </div>
+          <textarea type="textarea" name="comment" class="label form-response__textarea"
+            placeholder="Комментарий"></textarea>
+          <div class="form-response__submit-block">
+            <label class="form-response__checkbox">
+              <input id="form-response__privacy-policy" type="checkbox" name="privacy-policy">
+              <span class="pseudo-checkbox pseudo-checkbox--checked">
+                <svg class="check-mark pseudo-checkbox__icon" viewbox="0 0 32 32">
+                  <use xlink:href="./img/sprite.svg#check-mark"></use>
+                </svg>
+              </span>
+              Я принимаю условия
+              <a href="#" class="privacy-policy-link link">
+                передачи информации
+              </a>
+            </label>
+            <button class="button form-response__submit" type="submit">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </div>
+      <div  class="modal__content modal-shanks">
+        <h2 class="modal-shanks__main-title modal__main-title">
+          Сообщение успешно отправлено
+        </h2>
+        <p class="modal-shanks__text modal__text">Наш менеджер свяжется с вами в ближайшее время</p>
+      </div>
+      <div class="modal__content modal-about-person">
+        <section class="person">
+          <div class="person__container">
+            <img class="person__img employee-img" src="./img/TatianaDemyanova.webp">
+            <div class="person__card employee-card">
+              <h2 class="employee-card__name">
+                Татьяна Демьянова
+              </h2>
+              <div class="employee-card__position">
+                Специалист, отдел МСФО, 32 года
+              </div>
+              <p class="employee-card__text">
+                «Компания сегодня — это одна из немногих компаний, где действительно делают крутые вещи.»
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="what-i-do">
+          <h3 class="what-i-do__title">
+            Чем я занимаюсь в компании
+          </h3>
+          <p class="what-i-do__text">
+            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
+            осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в
+            домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст
+            генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст
+            более привлекательным и живым для визуально-слухового восприятия.
+          </p>
+          <p class="what-i-do__text">
+            По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей
+            недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит
+            любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+          </p>
+          <img class="what-i-do__img" src="./img/whatido.webp" alt="На работе">
+          <div class="what-i-do__min">
+            <h4 class="what-i-do__title--min">
+              Чем я занимаюсь в компании
+            </h4>
+            <p class="what-i-do__text">
+              Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
+              осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в
+              домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст
+              генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать
+              текст более привлекательным и живым для визуально-слухового восприятия.
+            </p>
+          </div>
+          <article class="what-i-do__text--article">
+            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
+            осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в
+            домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст
+            генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст
+            более привлекательным и живым для визуально-слухового восприятия.
+          </article>
+        </section>
+        <section class="lesson">
+          <h5 class="lesson__title">
+            Рамки и место обучения кадров в значительной степени обуславливает создание системы обучения кадров
+          </h5>
+          <p class="lesson__text">
+            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
+            осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в
+            домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст
+            генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст
+            более привлекательным и живым для визуально-слухового восприятия.
+          </p>
+          <p class="lesson__text">
+            По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей
+            недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит
+            любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+@import "..//styles/_mixins.scss";
+#footer__trigger {
+  position: relative;
+  bottom: 65vh;
+  z-index: 10000;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 22px;
+  overflow: hidden;
+
+  &__container {
+    &>* {
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    width: 80px;
+    margin: 0 auto;
+    opacity: .5;
+    filter: grayscale(100%);
+    
+    &>.logo__img {
+      width: 80px;
+    }
+  }
+}
+
+.company-name {
+  margin-bottom: 17px;
+  @include text(400, 11px, 16px);
+  color: var(--grey82);
+}
+
+.private-policy {
+  display: block;
+  width: 100%;
+  margin-bottom: 33px;
+  @include text(400, 14px, 17px);
+}

@@ -1,0 +1,101 @@
+@import "..//styles/_mixins.scss";
+
+.our-team {
+  margin-bottom: 60px;
+  
+  &__slide {
+    width: 100%;
+    background: #F7F7F7;
+    position: relative;
+  }
+
+  &__swiper {
+    margin-bottom: 86px;
+  }
+}
+
+.employee-card {
+  padding-top: 117px;
+  padding-bottom: 85px;
+  z-index: 10;
+
+  &__name {
+    margin-bottom: 20px;
+    @include text(400, 36px, 28px);
+  }
+
+  &__position {
+    margin-bottom: 40px;
+    @include text(400, 16px, 28px);
+    color: var(--grey82);
+  }
+
+  &__text {
+    max-width: 630px;
+    @include text(400, 18px, 32px);
+  }
+}
+
+.employee-img {
+  position: absolute;
+  z-index: -10;
+  bottom: 0;
+  right: 10%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @include centerY;
+  z-index: 10;
+  padding: 42px 23px;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: background-color .1s ease;
+
+  &:hover {
+    background-color: var(--white);
+  }
+}
+
+.swiper-button-prev>.arrow-right--reverse {
+  transform: rotate(180deg);
+}
+
+.swiper-button-next {
+  right: 40px;
+}
+
+.swiper-button-prev {
+  left: 40px;
+}
+
+@media (max-width: 850px) {
+  .our-team {
+    margin-bottom: 0px;
+  }
+
+  .employee-card {
+    padding-top: 50px;
+    padding-bottom: 0;
+    @include centerYFlex;
+    background: var(--white);
+
+    &__name {
+      margin-bottom: 20px;
+      @include text(400, 28px, 28px);
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__link {
+      display: none;
+    }
+  }
+
+  .employee-img {
+    position: static;
+    margin: 0 auto;
+  }
+}

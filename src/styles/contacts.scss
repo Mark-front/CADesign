@@ -1,0 +1,71 @@
+@import "..//styles/_mixins.scss";
+.contacts {
+
+  &__map {
+    position: relative;
+    width: 100%;
+    height: 632px;
+  }
+
+  &__content {
+    @include centerYFlex();
+    @include centerXY();
+    z-index: 100;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    @include text(400, 18px, 22px);
+  }
+
+  &__tel {
+    display: block;
+    margin-bottom: 16px;
+    @include text(400, 64px, 75px);
+  }
+
+  &__email {
+    margin-bottom: 50px;
+  }
+
+  &__join-team {
+    margin-bottom: 49px;
+  }
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+}
+.ymaps-2-1-79-map-copyrights-promo, 
+.ymaps-2-1-79-copyright, 
+.ymaps-2-1-79-copyright_logo_no {
+  display: none !important;
+}
+
+.socials {
+  &__list--contacts {
+    max-width: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  &__icon--orange {
+    fill: var(--orangeE9);
+  }
+}
+
+@media (max-width: 915px) {
+  .contacts {
+    &__map {
+      height: 506px;
+    }
+
+    &__tel {
+      display: block;
+      white-space: nowrap;
+      margin-bottom: 16px;
+      @include text(400, 56px, 69px);
+    }
+  }
+}

@@ -1,0 +1,161 @@
+@import "..//styles/_mixins.scss";
+
+.header {
+  color: var(--dark);
+  background-color: var(--white);
+  margin-bottom: 36px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 17px;
+  }
+
+  &__line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #f2f2f2;
+  }
+}
+
+.logo {
+  display: block;
+
+  &__img {
+    width: 115px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 64px;
+    }
+  }
+
+  &__link {
+    outline: none;
+    display: block;
+    transition: color .3s ease;
+
+    &::after {
+      content: '';
+      display: block;
+      opacity: 0;
+      position: relative;
+      top: 33px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: calc(100% + 10px);
+      background-color: var(--orangeE9);
+      transition: opacity .3s ease;
+    }
+
+    &:hover.nav__link::after {
+      opacity: 1;
+    }
+  }
+}
+
+.socials {
+  position: relative;
+  &--modal {
+    z-index: 100;
+  }
+
+  &__list {
+    display: grid;
+  }
+  &__list--header {
+    position: absolute;
+    top: 34px;
+    right: -25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 19px;
+    box-shadow: 0px 17px 46px rgba(0, 0, 0, 0.08);
+    background-color: var(--white);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+  }
+
+  &__list--visible {
+    display: grid;
+  }
+
+  &__btn-open {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 55%;
+      right: -13px;
+      transform: translateY(-50%);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 8px solid #242627;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 50px;
+  border: 1px solid var(--grey4F);
+  transition: border .3s ease;
+  &__icon {
+    transition: fill .3s ease;
+    fill: var(--orangeE9);
+  }
+
+  &--light-border {
+    border: 1px solid #E0E0E0;
+  }
+
+  &:hover{
+    & > .social__icon {
+      fill: var(--main-blue);
+    }
+  
+  }
+}
+
+
+
+@media (max-width: 1100px) {
+  .nav {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  @media (max-width: 915px) {
+
+    .header {
+      margin-bottom: 0;
+
+      &__line {
+        display: none;
+      }
+    }
+
+    .nav {
+      display: none;
+    }
+  }
+}

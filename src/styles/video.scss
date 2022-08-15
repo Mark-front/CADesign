@@ -1,0 +1,27 @@
+@import "..//styles/_mixins.scss";
+
+.video {
+  position: relative;
+  width: 100%;
+  transition: opacity .3s ease;
+  &__play {
+    opacity: 1;
+    @include centerXY();
+  }
+
+  &__play--hidden {
+    opacity: 0;
+  }
+}
+
+.company-video {
+  object-fit: cover;
+  height: 632px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .company-video{
+    height: 450px;
+  }
+}

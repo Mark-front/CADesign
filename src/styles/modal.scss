@@ -1,0 +1,69 @@
+@import "..//styles/_mixins.scss";
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(36, 38, 39, 0.84);
+  &__container {
+    @include centerX();
+    top: 170px;
+    width: 100%;
+    max-width: 1145px;
+    height: fit-content;
+    padding: 120px 100px;
+    background-color: var(--white);
+    box-shadow: 0px 28px 62px rgba(0, 0, 0, 0.07);
+  }
+  &__main-title {
+    @include text(700, 36px, 42px)
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      margin-right: 20px;
+      background-color: var(--main-blue);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: -69px;
+    top: 0;
+    padding: 29px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .modal {
+    &__close {
+      z-index: 1000;
+      right: 40px;
+      top: 40px;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .modal {
+    &__container {
+      padding: 140px 40px;
+    }
+  }
+}
+

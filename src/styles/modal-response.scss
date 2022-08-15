@@ -1,0 +1,155 @@
+@import "..//styles/_mixins.scss";
+
+.modal-response {
+  display: none;
+  &__container {
+    max-width: 712px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__main-title {
+    margin-bottom: 57px;
+  }
+}
+
+.modal {
+  &__form {
+    width: 100%;
+  }
+}
+
+.form-response {
+  &__label {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &--tel {
+      margin-bottom: 0;
+      margin-right: 5px;
+    }
+
+    &--birth-date {
+      padding: 0;
+
+      &>input {
+        padding: 25px 28px;
+      }
+
+      margin-bottom: 0;
+      margin-right: 34px;
+    }
+  }
+
+  &__label-file {
+    width: 100%;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--dark);
+    text-align: center;
+    cursor: pointer;
+    transition: border-bottom .3s ease;
+
+
+    &:hover {
+      border-bottom: 1px solid var(--blue);
+    }
+  }
+
+  .file {
+    &__name {
+      margin-right: 10px;
+    }
+
+    &__del {
+      display: none;
+
+      &>svg {
+        fill: var(--orangeE9);
+      }
+    }
+  }
+
+  .input-file {
+    display: none;
+  }
+
+  &__textarea {
+    min-height: 153px;
+    margin-bottom: 32px;
+    padding: 25px 28px;
+    border: none;
+    resize: none;
+
+    &::placeholder {
+      @include text(400, 16px, 20px);
+      color: var(--grey82);
+    }
+  }
+
+  &__halfs-box {
+    display: flex;
+    margin-bottom: 32px;
+  }
+
+  &__birth-and-file {
+    display: flex;
+    max-width: 566px;
+    margin-bottom: 32px;
+  }
+
+  &__submit-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--greyF2);
+    border-radius: 2px;
+    padding: 38px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &>#form-response__privacy-policy {
+      display: none;
+
+      &:checked+.pseudo-checkbox {
+        &>.pseudo-checkbox__icon {
+          opacity: 1;
+        }
+
+        &.pseudo-checkbox--checked {
+          background: var(--orangeE9);
+        }
+      }
+    }
+
+    &>.pseudo-checkbox {
+      margin-right: 20px;
+    }
+  }
+}
+
+.privacy-policy-link {
+  margin-left: 5px;
+}
+
+.pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--orangeE9);
+  border-radius: 2px;
+  transition: background-color .1s ease;
+  cursor: pointer;
+
+  &__icon {
+    opacity: 0;
+    stroke: var(--white);
+    transition: opacity .1s ease;
+  }
+}

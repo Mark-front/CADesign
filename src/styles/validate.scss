@@ -1,0 +1,31 @@
+@import "..//styles/_mixins.scss";
+
+.just-validate-error-label {
+  position: absolute;
+  bottom: -20px;
+  left: 28px;
+  @include text(400, 11px, 14px);
+}
+
+.just-validate-success-field {
+  background-color: var(--greyF2);
+}
+
+.clear-input {
+  width: 12px;
+  display: none;
+  @include centerY;
+  right: 28px;
+  &__icon--done {
+    display: none;
+  }
+
+  &__icon--clear {
+    display: none;
+  }
+}
+
+
+.just-validate-error-field {
+  @include shadowLikeBorder(1px, #BE1A1A)
+}

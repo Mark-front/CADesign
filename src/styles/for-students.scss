@@ -1,0 +1,89 @@
+@import "..//styles/_mixins.scss";
+
+.for-students {
+  position: relative;
+  margin-bottom: 90px;
+  &__container {
+    padding: 86px 0 104px 0;
+    @include centerYFlex();
+  }
+  &__bacg {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: var(--greyF9);
+    z-index: -1;
+  }
+
+  &__bacg--left {
+    left: 0;
+    border-radius: 0px 36px 36px 0px;
+  }
+
+  &__bacg--rigth {
+    right: 0;
+    border-radius: 36px 0px 0px 36px;
+  }
+
+  &__title {
+    margin-bottom: 28px;
+  }
+
+  &__text {
+    @include text(400, 22px, 28px);
+  }
+  
+  &__text, &__list {
+    margin-bottom: 84px;
+  }
+  &__feedback {
+      @include text(400, 22px, 26px);
+    & > * {
+      @include text(400, 22px, 26px);
+    } 
+  }
+}
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 116px;
+
+  &__item {
+    margin-bottom: 39px;
+  }
+}
+.skill {
+  @include centerYFlex();
+  &__icon {
+    @include centerYFlex();
+    background-color: var(--white);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 39px;
+    & > svg {
+      width: 30px;
+    }
+  }
+
+  &__name {
+    display: block;
+    white-space: nowrap;
+    @include text(400, 18px, 22px);
+  }
+}
+
+
+@media (max-width: 1235px) {
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 131px;
+    row-gap: 60px;
+  
+    &__item {
+      margin-bottom: 39px;
+    }
+  }
+}

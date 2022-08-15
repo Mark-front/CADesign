@@ -1,0 +1,91 @@
+@import "..//styles/_mixins.scss";
+
+.modal-about-person {
+  display: none;
+  padding-top: 340px;
+}
+.person {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 120px;
+  background-color: #e6e6e6;
+  box-shadow: 0px 28px 62px rgba(0, 0, 0, 0.07);
+  
+  &__container {
+    position: relative;
+    margin-bottom: 56px;
+  }
+}
+.person__container {
+  width: 100%;
+  & > .employee-img {
+    position: absolute;
+    z-index: 100;
+    right: -80px;
+    transform: scale(.7) translateY(38%);
+  } 
+
+  & > .employee-card {
+    display: block;
+    background: transparent;
+    & > * {
+      text-align: start;
+    }
+  } 
+}
+.what-i-do {
+		&__title {
+      margin-bottom: 34px;
+      @include text(700, 36px, 42px) 
+		}
+
+		&__text {
+      margin-bottom: 34px;
+      @include text(400, 18px, 34px);
+		}
+    &__img {
+      width: 100%;
+      margin-bottom: 34px;
+      object-fit: cover;
+    }
+		&__title--min {
+      margin-bottom: 34px;
+      @include text(700, 24px, 27px) 
+		}
+    
+		&__text--article {
+      margin-bottom: 34px;
+      padding: 42px;
+      border: 1px solid var(--orangeE9);
+      background: rgba(233, 134, 42, 0.02);
+      @include text(400, 18px, 34px);
+      text-align: center;
+		}
+}
+.lesson {
+		&__title {
+      margin-bottom: 34px;
+      @include text(700, 18px, 30px);
+		}
+
+		&__text {
+      margin-bottom: 34px;
+      @include text(400, 18px, 34px);
+		}
+}
+
+@media (max-width: 915px) {
+  .person {
+    padding: 0 40px;
+
+  }
+  .person__container {
+    & > .employee-card {
+      & > * {
+        min-width: 427px;
+      }
+    } 
+  }
+}

@@ -1,0 +1,55 @@
+@import "..//styles/_mixins.scss";
+
+.our-values {
+  background: #F2F2F2;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  margin-bottom: 64px;
+  &__title {
+    text-align: center;
+    margin-bottom: 58px;
+  }
+  &__swiper {
+    display: none;
+  }
+}
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  &__item {
+  }
+}
+.values-card {
+  max-width: 376px;
+  padding: 59px 50px 61px 50px;
+  background-color: var(--white);
+
+  &__title {
+    @include text(400, 20px, 28px);
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  &__text {
+    @include text(400, 16px, 30px);
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 915px) {
+  .our-values {
+    &__list {
+      display: none;
+    }
+
+    &__swiper {
+      display: block;
+    }
+  }
+
+  .values-card {
+    height: 100%;
+  }
+}

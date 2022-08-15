@@ -1,0 +1,17 @@
+@import "..//styles/_mixins.scss";
+
+.modal-shanks {
+  display: none;
+
+  &__main-title {
+    margin-bottom: 46px;
+    text-align: center;
+  }
+
+  &__text {
+    @include text(400, 18px, 22px);
+    text-align: center;
+  }
+}
+
+

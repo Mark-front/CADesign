@@ -1,0 +1,32 @@
+@import "..//styles/_mixins.scss";
+
+.modal-vacancy {
+  display: none;
+
+  &__main-title {
+    margin-bottom: 38px;
+  }
+
+  &__salary {
+    margin-bottom: 47px;
+    @include text(400, 18px, 22px);
+  }
+
+  &__btn {
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @include text(400, 24px, 24px);
+  }
+  &__list {
+    margin-bottom: 56px;
+  }
+}
+
+.time-add {
+  margin-bottom: 56px;
+  @include text(400, 16px, 24px);
+  color: var(--gray82);
+}
